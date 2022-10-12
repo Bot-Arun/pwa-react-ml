@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "sPark",
+  "name": "sPark",
   "icons": [
     {
         "src": "/images/icon-192x192.png",
@@ -28,7 +28,7 @@
     }
 ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
