@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import { FaUserCircle,FaRegCompass } from 'react-icons/fa'
 import { AiFillSetting } from 'react-icons/ai'
-import {Dropdown } from 'semantic-ui-react'
+import {Dropdown  } from 'semantic-ui-react'
+import { Select,Input } from 'react-daisyui'
 function App() {
   // // const addressDefinitions = faker.definitions.address;
   // console.log(addressDefinitions)
@@ -37,16 +38,16 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='  text-white py-5' >
-        <div className='h-[10rem]' >
-        {/* <Dropdown   placeholder='State' search selection options={arr.map((x,y) =>( {"key":y,"value":'Block'+y,text:'Block'+y}))} /> */}
+      <div data-theme="cupcake"  className='flex flex-col justify-between  bg-black  text-white py-5' >
+        <div className='h-[5rem]  text-sm mx-auto flex justify-center ' >
+        <SelectBlock block={block} setBlock={setBlock}  />
         </div>
  
-        <div className='bg-gray-400 rounded-lg mx-auto py-3 px-4 text-xl font-medium w-fit' >
-          <span>
+        <div className='bg-gray-400 rounded-md mx-auto py-2 px-4  font-medium w-fit flex ' >
+          <span className='self-center' >
              Dynamic Allotment
           </span>
-          <span className='ml-10' > 231</span>
+          <span className='ml-10' ><Input type="checkbox" className=" mt-2 toggle self-stretch "  /></span>
         </div>
       </div>
       <div className='p-5' >
@@ -57,4 +58,21 @@ function App() {
   );
 }
 
+const SelectBlock = ({block ,setBlock}) => {
+  return (
+    <Select  className='bg-gray-500 pr-20 text-left text-sm rounded-xl text-white select' size={100} color={''}
+        initialValue={'default'}
+        onChange={x => setBlock(x)}
+      >
+        <option value={'default'} className='rounded-t-md text-gray-400' disabled>
+            {block}
+        </option>
+        <option value={'Block1'}>Block1</option>
+        <option value={'Block2'}>Block2</option>
+        <option value={'Block3'}>Block3</option>
+        <option value={'Block4'}>Block4</option>
+        <option value={'Block5'}>Block5</option>
+      </Select>
+  )
+}
 export default App;
