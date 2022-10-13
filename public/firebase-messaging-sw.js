@@ -1,5 +1,5 @@
-import { initializeApp } from 'firebase/app'
-import {getMessaging , getToken,onMessage} from 'firebase/messaging'
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js'
+import {getMessaging , getToken,onMessage} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-messaging.jsfirebase/messaging'
 const firebaseConfig = {
     apiKey: "AIzaSyBTmLFT2eXjSz4U01Kxo8uQ4yL5Af0qUSg",
     authDomain: "pwa-ml-dbdeb.firebaseapp.com",
