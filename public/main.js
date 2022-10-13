@@ -19,13 +19,7 @@ console.log('loded main')
 const app = initializeApp(firebaseConfig);
 
 const messaging = getMessaging(app);
-onMessage(messaging, (payload) => {
-  console.log('Message received. ', payload);
-//   document.getElementById("allot_number").innerHTML = payload.notification.body;
-// new Notification("23432432")
-  alert('recived message',payload)
-  // ...
-});
+
 // Initialize Firebase Cloud Messaging and get a reference to the service
 // const messaging = getMessaging(app);
 window.addEventListener('load', e => {
@@ -89,6 +83,8 @@ function checkIfPushIsEnabled() {
 
 //---subscribe to push notification---
 function subscribeToPushNotification() {
+    if (localStorage.getItem('key')) 
+        return
     navigator.serviceWorker.ready
     .then(function(registration) {
         if (!registration.pushManager) {
@@ -108,6 +104,8 @@ function subscribeToPushNotification() {
         .then(function (subscription) {
             console.log('Push notification subscribed.');
             console.log(subscription);
+            let lastname = localStorage.setItem('key',subscription);
+            console.log('storage acces ',lastname)
             sendSubscriptionIDToServer(subscription);
             updatePushNotificationStatus(true);
         })

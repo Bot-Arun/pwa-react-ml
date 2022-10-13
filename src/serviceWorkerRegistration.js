@@ -28,6 +28,7 @@ onMessage(messaging, (payload) => {
   console.log('Message received. ', payload);
 //   document.getElementById("allot_number").innerHTML = payload.notification.body;
   new Notification("Welcome to TCE !")
+  alert('welcome to tce')
   // ...
 });
 const isLocalhost = Boolean(
