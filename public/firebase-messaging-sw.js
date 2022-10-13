@@ -20,7 +20,7 @@ const messaging = firebase.messaging(firebaseApp);
 
 
 messaging.onBackgroundMessage((payload) => {
-    console.log('[firebase-messaging-sw.js] Received background message ', payload);
+    // console.log('[firebase-messaging-sw.js] Received background message ', payload);
     // Customize notification here
     // const notificationTitle = payload.title;
     // const notificationOptions = {
@@ -28,5 +28,5 @@ messaging.onBackgroundMessage((payload) => {
     //   icon: '/firebase-logo.png'
     // };
     // set("alot_number",payload.body)
-    self.registration.showNotification("Welcome to TCE");
+    // self.registration.showNotification("Welcome to TCE");
   });
