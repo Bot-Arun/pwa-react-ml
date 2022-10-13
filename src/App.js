@@ -2,12 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import { FaUserCircle,FaRegCompass } from 'react-icons/fa'
 import { AiFillSetting } from 'react-icons/ai'
-import {Dropdown  } from 'semantic-ui-react'
 import { Select,Input } from 'react-daisyui'
 function App() {
-  // // const addressDefinitions = faker.definitions.address;
-  // console.log(addressDefinitions)
-  const arr = [1,2,3,4,5]
   const [block, setBlock] = useState("Block1");
   return (
     <div className=" flex flex-col h-screen bg-black justify-center " >

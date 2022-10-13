@@ -9,7 +9,27 @@
 
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://cra.link/PWA
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js'
+import {getMessaging , getToken,onMessage} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-messaging.js'
+const firebaseConfig = {
+    apiKey: "AIzaSyBTmLFT2eXjSz4U01Kxo8uQ4yL5Af0qUSg",
+    authDomain: "pwa-ml-dbdeb.firebaseapp.com",
+    projectId: "pwa-ml-dbdeb",
+    storageBucket: "pwa-ml-dbdeb.appspot.com",
+    messagingSenderId: "872539464589",
+    appId: "1:872539464589:web:803a3bf73e27e8d7ee93c4",
+    measurementId: "G-9FXY1WGQEJ"
+  };
+console.log('loded main')
+const app = initializeApp(firebaseConfig);
 
+const messaging = getMessaging(app);
+onMessage(messaging, (payload) => {
+  console.log('Message received. ', payload);
+//   document.getElementById("allot_number").innerHTML = payload.notification.body;
+  new Notification("Welcome to TCE !")
+  // ...
+});
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
